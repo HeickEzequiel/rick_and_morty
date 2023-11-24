@@ -8,6 +8,9 @@ import About from './components/about/About.jsx';
 import Detail from './components/detail/Detail.jsx';
 import Error from './components/error/error.jsx';
 import Form from './components/form/Form.jsx';
+import Favorites from './components/favorites/Favorites.jsx'
+import { useDispatch } from 'react-redux';
+import { removeFav } from './redux/actions.js';
 
 
 const URL = "https://rym2.up.railway.app/api/character"
@@ -18,6 +21,7 @@ function App() {
    const [characters, setCharacters] = useState([])
    const navigate = useNavigate()
    const location = useLocation()
+   const dispatch = useDispatch
    
    function onSearch(id) {
       const characterId = characters.filter(
@@ -42,6 +46,7 @@ function App() {
 
    const onClose = (id) => {
       setCharacters(characters.filter((char) => char.id !== Number(id)))
+      dispatch(removeFav(id))
    }
   
    const [access, setAccess] = useState(false);
@@ -69,7 +74,7 @@ function App() {
    return (
       <div className='App'>
          {
-            location.pathname !== "/" && <Nav onSearch = {onSearch} logout={logout}/>
+            location.pathname !== "/" ? <Nav onSearch = {onSearch} logout={logout}/> : null
          }
          
          <Routes>
@@ -88,6 +93,8 @@ function App() {
             <Route path="*"
                    element = {<Error />}
                    />
+            <Route path="/favorites"
+                   element={<Favorites onClose={onClose}/>} />
 
          </Routes>
          <hr/>

@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
                Home
             </Link>
          </button>
-       
+         <button onClick={props.logout} >Logout ❌</button>
        
        </div>
     );
