@@ -1,9 +1,8 @@
-const regexEmail = /\S+@\S+\.\S+/;
-const regexPassword = new RegExp("[0-9]");
-
 function validation (input){
     const errors = {}
- 
+    const regexEmail = /\S+@\S+\.\S+/;
+    const regexPassword = new RegExp("[0-9]");
+
 if(!input.email.length) errors.email = "ingrese su email"
 else{
     if(!regexEmail.test(input.email)) errors.email = "ingrese un email valido"

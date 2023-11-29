@@ -1,6 +1,6 @@
 import { ADD_FAV, FILTER, ORDER, REMOVE_FAV } from "./action-types";
 
-export function addFav(character) { //* { id: 1, name: "Rick"}
+export function addFav(character) { 
   return {
     type: ADD_FAV,
     payload: character

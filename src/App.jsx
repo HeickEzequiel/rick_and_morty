@@ -6,7 +6,7 @@ import axios from "axios";
 import { Routes, Route, useNavigate, useLocation} from 'react-router-dom';
 import About from './components/about/About.jsx';
 import Detail from './components/detail/Detail.jsx';
-import Error from './components/error/error.jsx';
+import Error from './components/error/Error.jsx';
 import Form from './components/form/Form.jsx';
 import Favorites from './components/favorites/Favorites.jsx'
 import { useDispatch } from 'react-redux';
@@ -67,7 +67,7 @@ function App() {
    }
 
    useEffect(() => {
-      !access && navigate('/home');
+      !access && navigate('/');
        }, [access]);
 
 

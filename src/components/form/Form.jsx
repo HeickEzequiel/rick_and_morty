@@ -14,14 +14,14 @@ const [errors, setErrors] = useState({
 })
 
 const handleChange = (event) => {
-    const {name,value} = event.target
+    const {name, value} = event.target
     setUserData({
         ...userData,
         [name]: value
     })
     setErrors(validation({
         ...userData,
-        [name]: value
+        [name]: value 
     }))
 }
     
@@ -35,7 +35,7 @@ const handleSubmit = event => {
         <div>
             <form onSubmit={handleSubmit} >
 
-                <label>Email:</label>
+                <label style={{color: "white"}}>Email: </label>
                 <input type='text'
                        key="email"
                        name= "email"
@@ -43,11 +43,11 @@ const handleSubmit = event => {
                        placeholder="Ingresar email"
                        onChange={handleChange}
                     />
-                    <p>{ errors.email ? errors.email : null }</p>
+                    <p style={{color: "red"}}>{ errors.email ? errors.email : null }</p>
                 <br />
 
                 
-                <label>Password:</label>
+                <label style={{color: "white"}}>Password: </label>
                 <input type='password'
                        key="password"
                        name= "password"
@@ -55,14 +55,14 @@ const handleSubmit = event => {
                        placeholder="Ingresar password"
                        onChange={handleChange}
                     />
-                     <p>{ errors.password && errors.password }</p>
+                     <p style={{color: "red"}}>{ errors.password && errors.password }</p>
                 <br />
 
                 <button
                         type="submit"
                         disabled={ errors.email || errors.password }
                     >
-                    Enviar </button>
+                    Submit </button>
 
             </form>
         </div>
