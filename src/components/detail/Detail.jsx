@@ -1,3 +1,4 @@
+import styles from "./Detail.module.css"
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -27,8 +28,9 @@ function Detail(props){
    
     return(
 
-        <div>
-            <h1>detail</h1>
+      <div className={styles.container}>
+            <h1>details</h1>
+            <hr/>
             <h2>{character.name}</h2>
             <img src = {character.image} alt = {character.name} />
             <h3>Status: {character.status}</h3>

@@ -1,4 +1,4 @@
-import { ADD_FAV, FILTER, ORDER, REMOVE_FAV } from "./action-types";
+import { ADD_FAV, FILTER, ORDER, REMOVE_FAV,} from "./action-types";
 
 const initialState = {
   myFavorites: [],
@@ -51,8 +51,9 @@ function reducer(state = initialState, { type, payload }) {
         ...state,
         myFavorites: orderCopy
       }
-    default:
-      return { ...state }
+
+        default:
+          return { ...state }
   }
 }
 export default reducer

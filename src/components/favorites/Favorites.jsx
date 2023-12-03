@@ -1,3 +1,4 @@
+import styles from "./Favorite.module.css"
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../card/Card.jsx";
 import { filterCards, orderCards } from "../../redux/actions.js";
@@ -17,8 +18,9 @@ export default function Favorites({ onClose }) {
   }
 
    return (
-      <div>
-         <div>
+      <div >
+         <div >
+            
             <select name="order" onChange={handleOrder}>
                <option value="A">Ascendente</option>
                <option value="D">Descendente</option>
@@ -31,8 +33,8 @@ export default function Favorites({ onClose }) {
                <option value="unknown">unknown</option>
             </select>
          </div>
-
-         <div
+            <br/>
+         <div className={styles.container}
                      >
             {
                !myFavorites.length
