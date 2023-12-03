@@ -13,9 +13,6 @@ import { useDispatch } from 'react-redux';
 import { removeFav } from './redux/actions.js';
 
 
-const URL = "https://rym2.up.railway.app/api/character"
-const KEY = "henrystaff"
-
 function App() {
 
    const [characters, setCharacters] = useState([])
@@ -30,7 +27,7 @@ function App() {
          if(characterId.length){
             return alert(`El personaje con id ${id} ya existe`)
          }
-      axios(`${URL}/${id}?key=${KEY}`).then(
+      axios(`https://rickandmortyapi.com/api/character/${id}`).then(
          ({ data }) => {
             if(data.name) {
                setCharacters([...characters, data])
@@ -67,7 +64,7 @@ function App() {
    }
 
    useEffect(() => {
-      !access && navigate('/');
+      !access && navigate('/home'); // si quiero evitar el login ('/')------>('/home')
        }, [access]);
 
 

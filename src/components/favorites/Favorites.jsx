@@ -33,12 +33,7 @@ export default function Favorites({ onClose }) {
          </div>
 
          <div
-            style={{
-               display: "flex",
-               flexWrap: "wrap",
-               justifyContent: "space-evenly"
-            }}
-         >
+                     >
             {
                !myFavorites.length
                ? <h2>No hay favoritos</h2>

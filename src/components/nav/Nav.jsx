@@ -17,6 +17,11 @@ import { Link } from "react-router-dom";
                Home
             </Link>
          </button>
+         <button>
+            <Link to= '/favorites'>
+               Favorites
+            </Link>
+         </button>
          <button onClick={props.logout} >Logout ❌</button>
        
        </div>
