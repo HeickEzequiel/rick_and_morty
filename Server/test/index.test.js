@@ -13,7 +13,7 @@ describe("Test de RUTAS", () => {
     });
     it('Responde un objeto con las propiedades: "id", "name", "species", "gender", "status", "origin" e "image"', async () => {
       const response = (await agent.get('/rickandmorty/character/1')).body;
-      //* { body: info }
+     
       expect(response).toHaveProperty("id");
       expect(response).toHaveProperty("name");
       expect(response).toHaveProperty("species");
@@ -39,8 +39,7 @@ describe("Test de RUTAS", () => {
   })
 
   describe("POST /rickandmorty/fav", () => {
-    //* { 1 } => [ { 1 } ]
-    //* { 2 } => [ { 1 }, { 2 } ]
+
     it("Devuelve array con personaje enviado por body", async () => {
       const response = await agent
         .post("/rickandmorty/fav")
